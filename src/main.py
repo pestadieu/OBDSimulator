@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 
-import socket
-import struct
-import sys
+#import socket
+#import struct
+#import sys
 
-sys.path.append("./obd_pid")
+#sys.path.append("./obd_pid")
 
-from server import *
+#from obd_pid import *
+from can_server import *
 
-s = CANServer()
+s = can_server()
 s.listen("vcan0")
 

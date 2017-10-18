@@ -13,13 +13,13 @@ def print_frame(msg, frame):
 	count = 0
 	if(DEBUG):
 		for k in range(0, len(frame)):
-			ch += format(frame[k], '02x')
-			if(count == 15):
-				ch += "\n00" + (k//16) + "0  "
+			if(count == 16):
+				ch += "\n00" + str(k//16) + "0  "
 				count = 0
-			elif(count == 7):
+			elif(count == 8):
 				ch += " "
-			count ++
+			ch += format(frame[k], '02x')
+			count+=1
 			ch += " "
 		print(msg)
 		print(ch)

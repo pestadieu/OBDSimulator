@@ -2,12 +2,12 @@
 
 import socket
 import struct
-import threading
+#import threading
 import sys
 
-sys.path.append("../src/server.py")
+#sys.path.append("../src/server.py")
 
-from server.py import *
+#from server.py import *
 
 """class myThread (threading.Thread):
 	def __init__(self):
