@@ -3,21 +3,29 @@
 import struct
 
 from frame import *
+from debug import *
 
 class can_frame_outbound(frame):
 	
 	#TODO Gestion des flags
-	def __init__(self, can_id, obd_mode, obd_pid, obd_data):		
-		self.odb_len = len(odb_data)
-		self.odb_mode = odb_mode
-		self.odb_pid = odb_pid
-		self.odb_data = odb_data
-		self.can_data = struct.pack(frame.obd_frame_fmt, odb_len, odb_pid, odb_data)
+	def __init__(self, can_id, obd_mode, obd_pid, obd_data):
+		self.obd_len = len(obd_data) + 2
+		self.obd_mode = obd_mode
+		self.obd_pid = obd_pid
+		self.obd_data = obd_data.ljust(5, b'\x00')
+		frame.obd_frame_fmt = "=bbb5b"
+		print(self.obd_len)
+		print(self.obd_mode)
+		print(self.obd_pid)
+		print(self.obd_data[0])
+		print(self.obd_data[1])
+		print(self.obd_data[2])
+		print(self.obd_data[3])
+		print(self.obd_data[4])
+		self.can_data = struct.pack(frame.obd_frame_fmt, self.obd_len, self.obd_mode,  self.obd_pid, self.obd_data[0], self.obd_data[1], self.obd_data[2], self.obd_data[3], self.obd_data[4])
 		print_frame("OBD response: ", self.can_data)
 		
-		self.can_id = outbound_can_id
-		self.can_dlc = len(can_data)
-		self.can_data = data.ljust(8, b'\x00')
-		self.can_frame = struct.pack(self.can_frame_fmt, can_id, can_dlc, can_data)
+		can_dlc = self.obd_len + 1
+		self.can_frame = struct.pack(frame.can_frame_fmt, can_id, can_dlc, self.can_data)
 	
 

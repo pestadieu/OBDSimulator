@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 
-#from obd_pid import *
-
 class frame(object):
 	
 	# CAN frame packing/unpacking (see `struct can_frame` in <linux/can.h>)
@@ -9,9 +7,9 @@ class frame(object):
 	
 	# OBD query/response packing/unpacking (see  `https://en.wikipedia.org/wiki/CAN_bus#Data_frame`)
 	obd_frame_fmt = ""
-	
+
 	outbound_can_id = 0x7E8
-       
+	
 	def __init__(self):
 		pass
 	
