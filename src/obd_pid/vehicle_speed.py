@@ -15,7 +15,7 @@ class vehicle_speed(object):
 		return self.pid
 	
 	def get_obd_data(self):
-		return b'\x45'
+		return b'\x2d'
 	
 	def get_outbound_pid(self):
 		#return hex(self.pid + 0x40)

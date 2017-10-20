@@ -14,14 +14,6 @@ class can_frame_outbound(frame):
 		self.obd_pid = obd_pid
 		self.obd_data = obd_data.ljust(5, b'\x00')
 		frame.obd_frame_fmt = "=bbb5b"
-		print(self.obd_len)
-		print(self.obd_mode)
-		print(self.obd_pid)
-		print(self.obd_data[0])
-		print(self.obd_data[1])
-		print(self.obd_data[2])
-		print(self.obd_data[3])
-		print(self.obd_data[4])
 		self.can_data = struct.pack(frame.obd_frame_fmt, self.obd_len, self.obd_mode,  self.obd_pid, self.obd_data[0], self.obd_data[1], self.obd_data[2], self.obd_data[3], self.obd_data[4])
 		print_frame("OBD response: ", self.can_data)
 		

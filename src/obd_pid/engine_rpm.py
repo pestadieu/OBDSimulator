@@ -12,7 +12,7 @@ class engine_rpm(object):
 		return "engine rpm"
 	
 	def get_obd_data(self):
-		return b'\x00\x04'
+		return b'\x03\x04'
 
 	def get_pid(self):
 		return self.pid
