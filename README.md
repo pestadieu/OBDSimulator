@@ -34,6 +34,13 @@ git clone https://github.com/pestadieu/OBDSimulator.git
 python3 src/main.py
 ```
 
+## Supported OBD PIDS
+
+Currently the simulator only supports these PIDS:
+
+0D - Vehicle Speed
+0C - Engine RPM
+
 ## Run the test
 
 1. In a terminal start the server:
