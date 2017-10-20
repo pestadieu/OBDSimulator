@@ -19,11 +19,34 @@ OBDSimulator only works with versions of python >= 3.3
 [sudo] ip link set up vcan0
 ```
 You can verify that the interface has been created by running the ```ip link show``` command
+
 More informations on how to setup CAN interfaces can be found [here](https://elinux.org/Bringing_CAN_interface_up)
 
-3. Install OBDSimulator
+3. Clone this repository
 
-## How to use
+```
+git clone https://github.com/pestadieu/OBDSimulator.git
+```
+
+4. Run OBDSimulator
+
+```
+python3 src/main.py
+```
+
+## Run the test
+
+1. In a terminal start the server:
+
+```
+python3 src/main.py
+```
+
+2. In another terminal run the tests:
+
+```
+python3 test/main.py
+```
 
 ## Ressources
 
