@@ -29,7 +29,7 @@ class can_frame(object):
 		
 		self.obd_mode += 0x40
 		self.obd_len = len(obd_data) + 2
-		self.obd_data = obd_data.ljust(5, bytes(0xOO))
+		self.obd_data = obd_data.ljust(5, b'\x00')
 		print(self.obd_len)
 		print(self.obd_mode)
 		print(self.obd_pid)
