@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 import struct
-# ~ import logging
 
 from pid.pid import *
 from debug import *
@@ -21,12 +20,11 @@ class can_frame(object):
 		self.obd_len = obd[0]
 		self.obd_mode = obd[1]
 		self.obd_pid = obd[2]
-		# ~ logging.info("OBD pid = " + str(self.obd_pid))
 		
 	def build_response(self):
 		print(self.obd_pid)
 		obd_data = get_response(self.obd_mode, self.obd_pid)
-		
+
 		self.obd_mode += 0x40
 		self.obd_len = len(obd_data) + 2
 		self.obd_data = obd_data.ljust(5, b'\x00')

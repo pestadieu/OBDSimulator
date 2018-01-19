@@ -4,12 +4,11 @@ import socket
 
 from debug import *
 from can_frame import *
-from pid.pid import *
+from pid import *
 
 class can_server(object):
 	
 	def __init__(self):
-		# ~ self.obd_pid = obd_pid()
 		pass
 		
 	def listen(self, interface):
