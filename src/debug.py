@@ -4,9 +4,9 @@ import sys
 
 DEBUG = 1
 
-def printd(*objects, sep=' ', end='\n', file=sys.stdout):
-	if(DEBUG):
-		print(*objects, sep=' ', end='\n', file=sys.stdout)
+# ~ def printd(*objects, sep=' ', end='\n', file=sys.stdout):
+	# ~ if(DEBUG):
+		# ~ print(*objects, sep=' ', end='\n', file=sys.stdout)
 		
 def print_frame(msg, frame):
 	ch = "0000  "

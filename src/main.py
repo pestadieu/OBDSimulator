@@ -1,7 +1,12 @@
 #!/usr/bin/python3
 
+# ~ import logging
+
 from can_server import *
 
-s = can_server()
-s.listen("vcan0")
+if __name__ == '__main__':
+	# ~ logging.basicConfig(filename='OBDSimulator.log', level=logging.DEBUG)
+	s = can_server()
+	s.listen("vcan0")
+
 

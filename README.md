@@ -39,9 +39,11 @@ python3 src/main.py
 Currently the simulator only supports these PIDS:
 
 0D - Vehicle Speed
+
 0C - Engine RPM
 
-## Run the test
+
+## Run the tests
 
 1. In a terminal start the server:
 
