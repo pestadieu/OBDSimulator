@@ -2,7 +2,7 @@
 
 import struct
 
-from pid.pid import *
+from pid import *
 from debug import *
 
 class can_frame(object):

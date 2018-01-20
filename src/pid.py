@@ -43,6 +43,15 @@ Lvalue += [b'\x65']
 # ~ Lpid = [vs_pid, er_pid, fp_pid, ect_pid]
 # ~ Lvalue = [vs_value, er_value, fp_value, ect_value]
 
+def set_value(mode, pid, value):
+	for k in range(0, len(Lmode)):
+		if((mode == Lmode[k]) and (pid == Lpid[k])):
+			Lvalue[k] = value
+			return;
+
+	print("PID " + str(hex(pid)) + " on mode " + str(hex(mode)) + " isn't supported")
+	return(-1)
+
 def get_response(mode, pid):
 	for k in range(0, len(Lmode)):
 		if((mode == Lmode[k]) and (pid == Lpid[k])):

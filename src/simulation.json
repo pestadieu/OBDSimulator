@@ -1,0 +1,16 @@
+{
+	"speed": [
+		{"time": 0, "value": 30},
+		{"time": 12, "value": 50}
+	],
+	"rpm": [
+		{"time": 0, "value": 300},
+		{"time": 14, "value": 500}
+	],
+	"fuel pressure":[
+		{"time": 0, "value": 10}
+	],
+	"coolant temperature": [
+		{"time": 0, "value": 90}
+	]
+}
